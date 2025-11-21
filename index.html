@@ -117,6 +117,9 @@
                     Scan this QR code with your phone to view this notice board and access the detailed Consular Manual.
                 </p>
                 <div id="qrcode" class="p-2 bg-white rounded-lg shadow-md border-4 border-white"></div>
+                <button id="downloadQrButton" onclick="downloadQRCode()" class="mt-4 px-4 py-2 text-sm font-medium rounded-xl shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150 ease-in-out">
+                    Save
+                </button>
             </div>
 
             <!-- Tabs -->
@@ -288,7 +291,29 @@
             document.getElementById(tabId).classList.add('active');
             document.querySelector(`.tab-button[onclick*='${tabId}']`).classList.add('bg-yellow-600', 'text-white');
         }
+        function downloadQRCode() {
+            const qrcodeContainer = document.getElementById('qrcode');
+            // qrcode.js renders the QR code into a canvas element inside the target div.
+            const canvas = qrcodeContainer.querySelector('canvas');
 
+            if (canvas) {
+                // Get the data URL of the canvas image
+                const imageURL = canvas.toDataURL('image/png');
+
+                // Create a temporary link element to trigger the download
+                const tempLink = document.createElement('a');
+                tempLink.href = imageURL;
+                tempLink.download = 'embassy_notice_board_qr.png'; // Suggested filename
+
+                // Append link to body, click it, and remove it
+                document.body.appendChild(tempLink);
+                tempLink.click();
+                document.body.removeChild(tempLink);
+            } else {
+                // If canvas isn't found, it might be an older browser using tables (less common)
+                console.error("QR Code canvas element not found. Download failed.");
+            }
+        }
         function generateQRCode() {
             const siteUrl = window.location.href;
             const qrcodeContainer = document.getElementById('qrcode');
