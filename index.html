@@ -86,14 +86,26 @@
                     </div>
 
                     <div class="md:col-span-2 mt-4">
-                        <p class="font-medium mb-1 flex items-center text-gray-800">
+                        <p class="font-medium mb-3 flex items-center text-gray-800">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 text-red-500" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0113 3.414L16.586 7A2 2 0 0117 8.414V16a2 2 0 01-2 2H5a2 2 0 01-2-2V4zm6 2a1 1 0 100-2 1 1 0 000 2zm4 4a1 1 0 100-2 1 1 0 000 2zm-4 4a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-              </svg> Full Consular Manual
+                                 <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0113 3.414L16.586 7A2 2 0 0117 8.414V16a2 2 0 01-2 2H5a2 2 0 01-2-2V4zm6 2a1 1 0 100-2 1 1 0 000 2zm4 4a1 1 0 100-2 1 1 0 000 2zm-4 4a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                            </svg> Detail Consular Manuals (PDF)
                         </p>
-                        <a href="consular information manual.pdf" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-xl shadow-sm text-white bg-red-600 hover:bg-red-700 transition duration-150 ease-in-out w-full sm:w-auto">
-              View Detailed PDF Guide
-            </a>
+                        <!-- Use a flexible container for responsive buttons -->
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <!-- 1. Original English/Detailed PDF -->
+                            <a href="consular information manual.pdf" target="_blank" class="flex-1 text-center px-4 py-2 border border-transparent text-sm font-medium rounded-xl shadow-sm text-white bg-red-600 hover:bg-red-700 transition duration-150 ease-in-out">
+                                English (Detailed Guide)
+                            </a>
+                            <!-- 2. Amharic PDF -->
+                            <a href="የቆንፅላ አገልግሎት.pdf" target="_blank" class="flex-1 text-center px-4 py-2 border border-transparent text-sm font-medium rounded-xl shadow-sm text-white bg-green-600 hover:bg-green-700 transition duration-150 ease-in-out">
+                                አማርኛ (Amharic)
+                            </a>
+                            <!-- 3. English/Chinese Bilingual PDF -->
+                            <a href="英语中文双语.pdf" target="_blank" class="flex-1 text-center px-4 py-2 border border-transparent text-sm font-medium rounded-xl shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition duration-150 ease-in-out">
+                                中英双语 (Chinese)
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
