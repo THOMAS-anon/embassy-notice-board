@@ -84,7 +84,6 @@
                             <a href="http://www.beijing.mfa.gov.et" target="_blank" class="text-blue-600 hover:underline">www.beijing.mfa.gov.et</a>
                         </p>
                     </div>
-
                     <div class="md:col-span-2 mt-4">
                         <p class="font-medium mb-3 flex items-center text-gray-800">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 text-red-500" viewBox="0 0 20 20" fill="currentColor">
@@ -98,29 +97,18 @@
                                 English (Detailed Guide)
                             </a>
                             <!-- 2. Amharic PDF -->
-                            <a href="የቆንፅላ አገልግሎት.pdf" target="_blank" class="flex-1 text-center px-4 py-2 border border-transparent text-sm font-medium rounded-xl shadow-sm text-white bg-green-600 hover:bg-green-700 transition duration-150 ease-in-out">
+                            <a href="የቆንፅላ አገልግሎት የተገልጋዮች መመሪያ እና የአገልግሎት ዝርዝር.pdf" target="_blank" class="flex-1 text-center px-4 py-2 border border-transparent text-sm font-medium rounded-xl shadow-sm text-white bg-green-600 hover:bg-green-700 transition duration-150 ease-in-out">
                                 አማርኛ (Amharic)
                             </a>
                             <!-- 3. English/Chinese Bilingual PDF -->
                             <a href="英语中文双语.pdf" target="_blank" class="flex-1 text-center px-4 py-2 border border-transparent text-sm font-medium rounded-xl shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition duration-150 ease-in-out">
                                 中英双语 (Chinese)
                             </a>
-                             </div>
                         </div>
                     </div>
-               </div>
-
-            <!-- QR Code -->
-            <div class="flex flex-col items-center p-4 bg-blue-50 border-blue-200 border rounded-xl mb-6">
-                <h3 class="text-lg font-bold text-blue-700 mb-3">Scan for Quick Access</h3>
-                <p class="text-sm text-center text-blue-600 mb-4">
-                    Scan this QR code with your phone to view this notice board and access the detailed Consular Manual.
-                </p>
-                <div id="qrcode" class="p-2 bg-white rounded-lg shadow-md border-4 border-white"></div>
-                <button id="downloadQrButton" onclick="downloadQRCode()" class="mt-4 px-4 py-2 text-sm font-medium rounded-xl shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150 ease-in-out">
-                    Save
-                </button>
+                </div>
             </div>
+
 
             <!-- Tabs -->
             <nav class="flex space-x-1 p-1 bg-gray-100 rounded-xl shadow-md mb-6 overflow-x-auto">
@@ -246,15 +234,75 @@
             </div>
 
             <!-- 4. Power of Attorney -->
+            <!-- 4. Power of Attorney -->
             <div id="poa" class="tab-content space-y-4">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Power of Attorney (PoA) Service</h2>
-                <div class="p-4 bg-yellow-50 rounded-xl border-l-4 border-yellow-500 shadow-sm">
-                    <h3 class="text-lg font-semibold text-yellow-700 mb-2">Process Overview</h3>
-                    <ul class="list-decimal ml-5 text-gray-600 space-y-2 text-sm">
-                        <li>Grantor brings original passport and a copy of attorney's ID.</li>
-                        <li>Pay <strong>331.80 RMB</strong> (Cash only). Processing: 15 minutes.</li>
-                        <li>Mail original PoA to Attorney-in-Fact in Ethiopia.</li>
-                        <li>Recipient authenticates at Ethiopian MoFA and DARS.</li>
+                <!-- Step-by-Step Guide -->
+                <div class="p-4 bg-yellow-50 rounded-xl border shadow-sm">
+                    <!-- Step 1 -->
+                    <div class="mb-5">
+                        <h4 class="font-semibold text-gray-900">Step 1: Visit the Ethiopian Embassy in Beijing</h4>
+                        <div class="mt-2 text-sm text-gray-700 space-y-2">
+
+                            <div>
+                                <span class="font-medium">What You Need to Bring (Documents required):</span>
+                                <ul class="list-disc ml-5 mt-1 space-y-1">
+                                    <li>
+                                        <span class="font-medium">For the person giving Power of Attorney (Grantor):</span> Original passport + one photocopy
+                                    </li>
+                                    <li>
+                                        <span class="font-medium">For the person receiving Power of Attorney (Attorney-in-fact):</span> One copy of their valid identification (e.g., Resident Permit, National ID – Ethiopia, or Driver’s License)
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:gap-6">
+                                <p class="text-gray-800"><span class="font-medium">Service Fee:</span> 331.80 RMB (Cash only)</p>
+                                <p class="text-gray-800"><span class="font-medium">Processing Time:</span> ~15 minutes (upon arrival during working hours)</p>
+                                <p class="text-gray-800"><span class="font-medium">Service Hours:</span> Monday–Friday, 8:30 AM – 5:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="mb-5">
+                        <h4 class="font-semibold text-gray-900">Step 2: Send the Document to Ethiopia</h4>
+                        <p class="mt-1 text-sm text-gray-700">
+                            After receiving the Power of Attorney from the embassy, send the original hard copy to the person receiving the Power of Attorney in Ethiopia.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="mb-5">
+                        <h4 class="font-semibold text-gray-900">Step 3: Authenticate at the Ethiopian Ministry of Foreign Affairs – Consular Affairs Directorate General</h4>
+                        <p class="mt-1 text-sm text-gray-700">
+                            The recipient must first get the document verified and authenticated by the Ministry of Foreign Affairs – Consular Affairs Directorate General.
+                        </p>
+                        <p class="text-sm text-gray-800">
+                            <span class="font-medium">Address:</span> 2QF4+8JH, Wendmanah St, Addis Ababa, Ethiopia
+                        </p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div>
+                        <h4 class="font-semibold text-gray-900">Step 4: Final Authentication at Federal Documents Office – Documents Authentication and Registration Service (DARS)</h4>
+                        <p class="mt-1 text-sm text-gray-700">
+                            After Ministry approval, the recipient must visit the Federal Documents Authentication and Registration Service (DARS) for final verification.
+                        </p>
+                        <p class="text-sm text-gray-800">
+                            <span class="font-medium">Branch Locations:</span> Check the nearest office here → <a href="http://www.dars.gov.et" class="text-blue-600 underline break-all">www.dars.gov.et</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Important Notes -->
+                <div class="p-4 bg-red-50 rounded-xl border-l-4 border-red-500 shadow-sm">
+                    <h3 class="text-lg font-semibold text-red-700 mb-2">Important Notes</h3>
+                    <ul class="list-disc ml-5 text-sm text-gray-800 space-y-2">
+                        <li>All submitted documents must be original. Any attempt to present forged, plagiarized, or altered documents is strictly prohibited and constitutes a legal offense. Individuals found submitting such documents will be held legally
+                            accountable in accordance with applicable laws and regulations.</li>
+                        <li>Payment must be in cash (RMB).</li>
+                        <li>Processing is done in person during embassy working hours.</li>
                     </ul>
                 </div>
             </div>
@@ -262,16 +310,97 @@
             <!-- 5. Police Clearance -->
             <div id="police" class="tab-content space-y-4">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Police Clearance & Fingerprint Certification</h2>
-                <div class="p-4 bg-pink-50 rounded-xl border-l-4 border-pink-500 shadow-sm">
-                    <h3 class="text-lg font-semibold text-pink-700 mb-2">Process Overview</h3>
-                    <ul class="list-disc ml-5 text-gray-600 space-y-2 text-sm">
-                        <li>Applicant brings original passport and five (5) photos.</li>
-                        <li>Sealed envelope issued — do not open.</li>
-                        <li>Fee: Free. Time: 20 minutes.</li>
-                        <li>Send sealed envelope to Ethiopian Police HQ for verification.</li>
-                        <li>After clearance, authenticate via MoFA and Chinese Embassy in Ethiopia.</li>
+
+                <!-- Step-by-Step Guide -->
+                <div class="p-4 bg-white rounded-xl border shadow-sm">
+                    <!-- Step 1 -->
+                    <div class="mb-5">
+                        <h4 class="font-semibold text-gray-900">Step 1: Visit the Ethiopian Embassy in Beijing</h4>
+                        <div class="mt-2 text-sm text-gray-700 space-y-2">
+                            <div>
+                                <span class="font-medium">What You Need to Bring (Applicant):</span>
+                                <ul class="list-disc ml-5 mt-1 space-y-1">
+                                    <li>Original passport + one photocopy</li>
+                                    <li>Five (5) photos (3cm × 4cm)</li>
+                                </ul>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:gap-6">
+                                <p class="text-gray-800"><span class="font-medium">Service Fee:</span> Free of charge</p>
+                                <p class="text-gray-800"><span class="font-medium">Processing Time:</span> ~20 minutes (upon arrival during working hours)</p>
+                                <p class="text-gray-800"><span class="font-medium">Service Hours:</span> Monday–Friday, 8:30 AM – 5:00 PM</p>
+                            </div>
+
+                            <div class="mt-2">
+                                <span class="font-medium">What Happens Next?</span>
+                                <ul class="list-disc ml-5 mt-1 space-y-1">
+                                    <li>Your fingerprints will be taken.</li>
+                                    <li>The officer will sign the document, place it with your photos in a sealed envelope, and stamp the envelope for security.</li>
+                                    <li>You will receive the sealed envelope — <strong>DO NOT OPEN IT.</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="mb-5">
+                        <h4 class="font-semibold text-gray-900">Step 2: Send the Sealed Document to Ethiopia</h4>
+                        <p class="mt-1 text-sm text-gray-700">
+                            Mail the sealed envelope to Ethiopia for further processing.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="mb-5">
+                        <h4 class="font-semibold text-gray-900">Step 3: Processing in Ethiopia</h4>
+                        <p class="mt-1 text-sm text-gray-700">
+                            Submit the sealed envelope to the Federal Police Criminal Investigation Sector – Forensic Investigation Directorate. Only they are authorized to open the sealed envelope.
+                        </p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="mb-5">
+                        <h4 class="font-semibold text-gray-900">Step 4: Authentication at Ethiopian Ministry of Foreign Affairs (MoFA)</h4>
+                        <p class="mt-1 text-sm text-gray-700">
+                            After police clearance, have the document verified and stamped by the Ethiopian Ministry of Foreign Affairs – Consular Affairs.
+                        </p>
+                        <p class="text-sm text-gray-800">
+                            <span class="font-medium">Address:</span> 2QF4+8JH, Wendmanah St, Addis Ababa, Ethiopia
+                        </p>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div>
+                        <h4 class="font-semibold text-gray-900">Step 5: Final Verification at the Chinese Embassy in Ethiopia</h4>
+                        <p class="mt-1 text-sm text-gray-700">
+                            Legalize the document at the Embassy of the People’s Republic of China in Ethiopia. Check their website or contact emails for exact address and requirements.
+                        </p>
+                        <p class="text-sm text-gray-800">
+                            <span class="font-medium">Contacts:</span> chinaemb_et@mfa.gov.cn, chineseembassy@telecom.net.et
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Important Notes -->
+                <div class="p-4 bg-red-50 rounded-xl border-l-4 border-red-500 shadow-sm">
+                    <h3 class="text-lg font-semibold text-red-700 mb-2">Important Notes</h3>
+                    <ul class="list-disc ml-5 text-sm text-gray-800 space-y-2">
+                        <li><strong>DO NOT OPEN</strong> the sealed envelope from the Ethiopian Embassy.</li>
+                        <li>All steps must be completed in order.</li>
+                        <li>Processing is done in person during embassy working hours.</li>
                     </ul>
                 </div>
+            </div>
+
+            <div class="flex flex-col items-center p-4 bg-blue-50 border-blue-200 border rounded-xl mt-6">
+                <h3 class="text-lg font-bold text-blue-700 mb-3">Scan for Quick Access</h3>
+                <p class="text-sm text-center text-blue-600 mb-4">
+                    Scan this QR code with your phone to view this notice board and access the detailed Consular Manual.
+                </p>
+                <div id="qrcode" class="p-2 bg-white rounded-lg shadow-md border-4 border-white"></div>
+                <button id="downloadQrButton" onclick="downloadQRCode()" class="mt-4 px-4 py-2 text-sm font-medium rounded-xl shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150 ease-in-out">
+                    Download
+                </button>
             </div>
         </main>
 
@@ -291,6 +420,7 @@
             document.getElementById(tabId).classList.add('active');
             document.querySelector(`.tab-button[onclick*='${tabId}']`).classList.add('bg-yellow-600', 'text-white');
         }
+
         function downloadQRCode() {
             const qrcodeContainer = document.getElementById('qrcode');
             // qrcode.js renders the QR code into a canvas element inside the target div.
@@ -314,6 +444,8 @@
                 console.error("QR Code canvas element not found. Download failed.");
             }
         }
+
+
         function generateQRCode() {
             const siteUrl = window.location.href;
             const qrcodeContainer = document.getElementById('qrcode');
