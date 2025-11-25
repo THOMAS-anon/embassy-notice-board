@@ -113,10 +113,11 @@
             <!-- Tabs -->
             <nav class="flex space-x-1 p-1 bg-gray-100 rounded-xl shadow-md mb-6 overflow-x-auto">
                 <button onclick="openTab('authentication')" class="tab-button active flex-shrink-0 px-4 py-2 text-sm font-medium rounded-lg text-white bg-yellow-600 hover:bg-yellow-700 transition-colors">Authentication</button>
-                <button onclick="openTab('immigration')" class="tab-button flex-shrink-0 px-4 py-2 text-sm font-medium rounded-lg text-gray-700 hover:bg-white transition-colors">Immigration & Passports</button>
-                <button onclick="openTab('vital')" class="tab-button flex-shrink-0 px-4 py-2 text-sm font-medium rounded-lg text-gray-700 hover:bg-white transition-colors">Vital Events</button>
                 <button onclick="openTab('poa')" class="tab-button flex-shrink-0 px-4 py-2 text-sm font-medium rounded-lg text-gray-700 hover:bg-white transition-colors">Power of Attorney</button>
                 <button onclick="openTab('police')" class="tab-button flex-shrink-0 px-4 py-2 text-sm font-medium rounded-lg text-gray-700 hover:bg-white transition-colors">Police Clearance</button>
+                <button onclick="openTab('immigration')" class="tab-button flex-shrink-0 px-4 py-2 text-sm font-medium rounded-lg text-gray-700 hover:bg-white transition-colors">Immigration & Passports</button>
+                <button onclick="openTab('vital')" class="tab-button flex-shrink-0 px-4 py-2 text-sm font-medium rounded-lg text-gray-700 hover:bg-white transition-colors">Vital Events</button>
+                
             </nav>
 
             <!-- 1. Authentication Tab -->
@@ -402,6 +403,18 @@
                     Download
                 </button>
             </div>
+            <!-- 2. Service Satisfaction & Complaints QR Code (Static Image) -->
+            <div class="flex flex-col items-center p-4 bg-green-50 border-green-200 border rounded-xl mt-6 mb-4">
+                <h3 class="text-lg font-bold text-green-700 mb-3">Service Satisfaction and Complaints Form</h3>
+                <p class="text-sm text-center text-green-600 mb-4">Scan this QR code to submit feedback or complaints directly to the Embassy.</p>
+                <div class="p-2 bg-white rounded-lg shadow-md border-4 border-white">
+                    <img src="com.jpg" alt="Service Satisfaction and Complaints QR Code" id="complaintQrImage" class="w-32 h-32" onerror="this.src='https://placehold.co/128x128/9CA3AF/FFFFFF?text=Image+Missing'; this.alt='Complaint QR Image Missing';">
+                </div>
+                <button id="downloadComplaintQrButton" onclick="downloadComplaintQRCode()" class="mt-4 px-4 py-2 text-sm font-medium rounded-xl shadow-sm text-white bg-green-600 hover:bg-green-700 transition duration-150 ease-in-out">
+                    Download 
+                </button>
+
+            </div>
         </main>
 
         <!-- Footer -->
@@ -443,6 +456,17 @@
                 // If canvas isn't found, it might be an older browser using tables (less common)
                 console.error("QR Code canvas element not found. Download failed.");
             }
+        }
+        function downloadComplaintQRCode() {
+            // Since this is a static image, we just need to trigger a download of the file path.
+            const tempLink = document.createElement('a');
+            tempLink.href = 'com.jpg';
+            tempLink.download = 'com.jpg'; // Suggested filename for clarity
+
+            // Append link to body, click it, and remove it
+            document.body.appendChild(tempLink);
+            tempLink.click();
+            document.body.removeChild(tempLink);
         }
 
 
