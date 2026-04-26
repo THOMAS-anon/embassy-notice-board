@@ -33,6 +33,37 @@
             background-repeat: no-repeat;
             min-height: 160px;
         }
+        /* ── Video player styling ── */
+        
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+        }
+        
+        .video-wrapper video {
+            width: 100%;
+            display: block;
+            max-height: 420px;
+            object-fit: contain;
+            background: #000;
+        }
+        
+        .video-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 0.97rem;
+            margin-bottom: 10px;
+        }
+        
+        .video-label svg {
+            flex-shrink: 0;
+        }
     </style>
 
     <!-- QRCode.js library -->
@@ -59,8 +90,8 @@
             <div class="bg-gray-50 p-4 mb-6 rounded-xl shadow-inner border border-gray-200">
                 <h2 class="text-lg font-semibold text-yellow-700 mb-2 flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
-          </svg> Operating Details
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                    </svg> Operating Details
                 </h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700 text-sm">
@@ -87,23 +118,34 @@
                     <div class="md:col-span-2 mt-4">
                         <p class="font-medium mb-3 flex items-center text-gray-800">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 text-red-500" viewBox="0 0 20 20" fill="currentColor">
-                                 <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0113 3.414L16.586 7A2 2 0 0117 8.414V16a2 2 0 01-2 2H5a2 2 0 01-2-2V4zm6 2a1 1 0 100-2 1 1 0 000 2zm4 4a1 1 0 100-2 1 1 0 000 2zm-4 4a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                                <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0113 3.414L16.586 7A2 2 0 0117 8.414V16a2 2 0 01-2 2H5a2 2 0 01-2-2V4zm6 2a1 1 0 100-2 1 1 0 000 2zm4 4a1 1 0 100-2 1 1 0 000 2zm-4 4a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
                             </svg> Detail Consular Manuals (PDF)
                         </p>
-                        <!-- Use a flexible container for responsive buttons -->
-                        <div class="flex flex-col sm:flex-row gap-3">
-                            <!-- 1. Original English/Detailed PDF -->
+
+                        <!-- ── PDF download buttons ── -->
+                        <!-- ORIGINAL 3 buttons + NEW 4th button for the Amharic Digital MoFA flyer -->
+                        <div class="flex flex-col sm:flex-row gap-3 flex-wrap">
+
+                            <!-- 1. English Detailed PDF -->
                             <a href="consular information manual.pdf" target="_blank" class="flex-1 text-center px-4 py-2 border border-transparent text-sm font-medium rounded-xl shadow-sm text-white bg-red-600 hover:bg-red-700 transition duration-150 ease-in-out">
                                 English (Detailed Guide)
                             </a>
-                            <!-- 2. Amharic PDF -->
+
+                            <!-- 2. Amharic Consular Manual PDF (original) -->
                             <a href="የቆንፅላ አገልግሎት የተገልጋዮች መመሪያ እና የአገልግሎት ዝርዝር.pdf" target="_blank" class="flex-1 text-center px-4 py-2 border border-transparent text-sm font-medium rounded-xl shadow-sm text-white bg-green-600 hover:bg-green-700 transition duration-150 ease-in-out">
                                 አማርኛ (Amharic)
                             </a>
-                            <!-- 3. English/Chinese Bilingual PDF -->
+
+                            <!-- 3. Chinese Bilingual PDF -->
                             <a href="英语中文双语.pdf" target="_blank" class="flex-1 text-center px-4 py-2 border border-transparent text-sm font-medium rounded-xl shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition duration-150 ease-in-out">
                                 中英双语 (Chinese)
                             </a>
+
+                            <!-- ✅ 4. NEW — Amharic Digital Consular Services Flyer (boss's request) -->
+                            <a href="Digital_Consular_Services_Amharic__1_.pdf" target="_blank" class="flex-1 text-center px-4 py-2 border border-transparent text-sm font-medium rounded-xl shadow-sm text-white bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out">
+                                🇪🇹 የዲጂታል ቆንስላ አገልግሎት (Digital MoFA)
+                            </a>
+
                         </div>
                     </div>
                 </div>
@@ -117,10 +159,13 @@
                 <button onclick="openTab('police')" class="tab-button flex-shrink-0 px-4 py-2 text-sm font-medium rounded-lg text-gray-700 hover:bg-white transition-colors">Police Clearance</button>
                 <button onclick="openTab('immigration')" class="tab-button flex-shrink-0 px-4 py-2 text-sm font-medium rounded-lg text-gray-700 hover:bg-white transition-colors">Immigration & Passports</button>
                 <button onclick="openTab('vital')" class="tab-button flex-shrink-0 px-4 py-2 text-sm font-medium rounded-lg text-gray-700 hover:bg-white transition-colors">Vital Events</button>
-                
             </nav>
 
-            <!-- 1. Authentication Tab -->
+
+            <!-- ══════════════════════════════════════════════════════
+                 1. Authentication Tab
+                 ✅ Added: legallization.mp4 video at the bottom
+            ══════════════════════════════════════════════════════ -->
             <div id="authentication" class="tab-content active space-y-4">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Document Authentication & Legalization</h2>
 
@@ -130,7 +175,7 @@
                     <ol class="list-decimal list-inside space-y-3 text-gray-700 text-sm">
                         <li><strong>Notarization in Ethiopia:</strong><br><span class="text-gray-600">Get your document notarized by the issuing authority in Ethiopia.</span></li>
                         <li><strong>Authentication by Ethiopian MoFA:</strong><br><span class="text-gray-600">Have the document authenticated by the Ministry of Foreign Affairs (MoFA) in Addis Ababa.</span></li>
-                        <li><strong>Authentication by Chinese Embassy in Ethiopia:</strong><br><span class="text-gray-600">Then legalized by the Embassy of the People’s Republic of China in Ethiopia.</span>
+                        <li><strong>Authentication by Chinese Embassy in Ethiopia:</strong><br><span class="text-gray-600">Then legalized by the Embassy of the People's Republic of China in Ethiopia.</span>
                             <p class="mt-1 text-gray-600 italic">Contacts: <a href="mailto:chinaemb_et@mfa.gov.cn" class="text-blue-600 hover:underline">chinaemb_et@mfa.gov.cn</a>, <a href="mailto:chineseembassy@telecom.net.et" class="text-blue-600 hover:underline">chineseembassy@telecom.net.et</a></p>
                         </li>
                         <li><strong>Submit at Ethiopian Embassy in Beijing:</strong><br>
@@ -140,7 +185,7 @@
                             </p>
                         </li>
                     </ol>
-                    <h4 class="text-lg font-semibold text-blue-700 mb-3">Fees & Processing Time</h4>
+                    <h4 class="text-lg font-semibold text-blue-700 mb-3 mt-4">Fees & Processing Time</h4>
                     <ul class="list-disc list-inside ml-4 text-sm text-gray-700 space-y-1">
                         <li>Individual Documents (I): <strong>317.70 RMB</strong> (cash only)</li>
                         <li>Commercial Documents (C): <strong>331.82 RMB</strong> (cash only)</li>
@@ -154,11 +199,11 @@
                     <ol class="list-decimal list-inside space-y-3 text-gray-700 text-sm">
                         <li><strong>Notarization in China:</strong><br><span class="text-gray-600">By a Chinese notary public (<strong>公证处</strong>).</span></li>
                         <li><strong>Authentication by Chinese MoFA or FAO:</strong><br><span class="text-gray-600">Authenticate via:
-              <ul class="list-disc list-inside ml-4 text-gray-600">
-                <li>Chinese Ministry of Foreign Affairs (Beijing)</li>
-                <li>Local Foreign Affairs Office (FAO)</li>
-              </ul>
-            </span></li>
+                            <ul class="list-disc list-inside ml-4 text-gray-600">
+                                <li>Chinese Ministry of Foreign Affairs (Beijing)</li>
+                                <li>Local Foreign Affairs Office (FAO)</li>
+                            </ul>
+                        </span></li>
                         <li><strong>Submit at Ethiopian Embassy in Beijing:</strong><br>
                             <span class="text-gray-600">Bring authenticated documents:</span>
                             <p class="mt-2 font-medium text-gray-800">
@@ -173,9 +218,43 @@
                     </ul>
                     <p class="text-sm text-gray-700 mt-2"><strong>Processing:</strong> 10 minutes | <strong>Hours:</strong> Mon–Fri, 8:30–17:00</p>
                 </div>
+
+                <!-- ✅ Digital MoFA App Alternative — Document Legalization Video -->
+                <div class="p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-300 shadow-sm mt-2">
+                    <div class="flex items-start gap-3 mb-3">
+                        <span class="text-2xl">📱</span>
+                        <div>
+                            <h4 class="font-bold text-green-800 text-base">Digital Alternative — No Embassy Visit Needed!</h4>
+                            <p class="text-sm text-green-700 mt-1">
+                                You can now request <strong>Document Legalization & Authentication</strong> online using the
+                                <strong>Digital MoFA mobile app</strong> — available on Google Play and the Apple App Store. Apply from anywhere in the world, 24/7, without visiting the embassy in person.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="video-label text-gray-800 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-700" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
+                        </svg> How to Use the Digital MoFA App — Document Legalization and Authentication
+                    </div>
+                    <div class="video-wrapper">
+                        <video controls preload="metadata">
+                            <source src="legallization.mp4" type="video/mp4">
+                            <p class="text-white text-sm p-4">
+                                Your browser does not support the video tag. 
+                                <a href="legallization.mp4" class="text-yellow-400 underline">Download the video</a> to watch it.
+                            </p>
+                        </video>
+                    </div>
+                    <p class="text-xs text-gray-600 mt-2">
+                        🌐 Learn more and get started at <a href="https://digitalmofa.com" target="_blank" class="text-green-700 underline font-medium">digitalmofa.com</a>
+                    </p>
+                </div>
             </div>
 
-            <!-- 2. Immigration Tab -->
+
+            <!-- ══════════════════════════════════════════════════════
+                 2. Immigration Tab (unchanged)
+            ══════════════════════════════════════════════════════ -->
             <div id="immigration" class="tab-content space-y-4">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Immigration & Citizenship Services</h2>
                 <p class="text-sm text-gray-600 bg-yellow-100 p-3 rounded-lg">
@@ -208,7 +287,10 @@
                 </div>
             </div>
 
-            <!-- 3. Vital Events Tab -->
+
+            <!-- ══════════════════════════════════════════════════════
+                 3. Vital Events Tab (unchanged)
+            ══════════════════════════════════════════════════════ -->
             <div id="vital" class="tab-content space-y-4">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Vital Events Registration</h2>
                 <div class="space-y-3">
@@ -234,17 +316,20 @@
                 </div>
             </div>
 
-            <!-- 4. Power of Attorney -->
-            <!-- 4. Power of Attorney -->
+
+            <!-- ══════════════════════════════════════════════════════
+                 4. Power of Attorney Tab
+                 ✅ Added: power_of_Authority.mp4 video at the bottom
+            ══════════════════════════════════════════════════════ -->
             <div id="poa" class="tab-content space-y-4">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Power of Attorney (PoA) Service</h2>
+
                 <!-- Step-by-Step Guide -->
                 <div class="p-4 bg-yellow-50 rounded-xl border shadow-sm">
                     <!-- Step 1 -->
                     <div class="mb-5">
                         <h4 class="font-semibold text-gray-900">Step 1: Visit the Ethiopian Embassy in Beijing</h4>
                         <div class="mt-2 text-sm text-gray-700 space-y-2">
-
                             <div>
                                 <span class="font-medium">What You Need to Bring (Documents required):</span>
                                 <ul class="list-disc ml-5 mt-1 space-y-1">
@@ -252,7 +337,7 @@
                                         <span class="font-medium">For the person giving Power of Attorney (Grantor):</span> Original passport + one photocopy
                                     </li>
                                     <li>
-                                        <span class="font-medium">For the person receiving Power of Attorney (Attorney-in-fact):</span> One copy of their valid identification (e.g., Resident Permit, National ID – Ethiopia, or Driver’s License)
+                                        <span class="font-medium">For the person receiving Power of Attorney (Attorney-in-fact):</span> One copy of their valid identification (e.g., Resident Permit, National ID – Ethiopia, or Driver's License)
                                     </li>
                                 </ul>
                             </div>
@@ -306,9 +391,43 @@
                         <li>Processing is done in person during embassy working hours.</li>
                     </ul>
                 </div>
+
+                <!-- ✅ Digital MoFA App Alternative — Power of Attorney Video -->
+                <div class="p-4 bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl border border-yellow-300 shadow-sm">
+                    <div class="flex items-start gap-3 mb-3">
+                        <span class="text-2xl">📱</span>
+                        <div>
+                            <h4 class="font-bold text-yellow-800 text-base">Digital Alternative — No Embassy Visit Needed!</h4>
+                            <p class="text-sm text-yellow-800 mt-1">
+                                You can now submit a <strong>Power of Attorney</strong> request online using the
+                                <strong>Digital MoFA mobile app</strong> — available on Google Play and the Apple App Store. Complete the process from anywhere in the world, 24/7, without visiting the embassy in person.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="video-label text-gray-800 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
+                        </svg> How to Use the Digital MoFA App — Power of Attorney
+                    </div>
+                    <div class="video-wrapper">
+                        <video controls preload="metadata">
+                            <source src="power_of_Authority.mp4" type="video/mp4">
+                            <p class="text-white text-sm p-4">
+                                Your browser does not support the video tag.
+                                <a href="power_of_Authority.mp4" class="text-yellow-400 underline">Download the video</a> to watch it.
+                            </p>
+                        </video>
+                    </div>
+                    <p class="text-xs text-gray-600 mt-2">
+                        🌐 Learn more and get started at <a href="https://digitalmofa.com" target="_blank" class="text-yellow-700 underline font-medium">digitalmofa.com</a>
+                    </p>
+                </div>
             </div>
 
-            <!-- 5. Police Clearance -->
+
+            <!-- ══════════════════════════════════════════════════════
+                 5. Police Clearance Tab (unchanged)
+            ══════════════════════════════════════════════════════ -->
             <div id="police" class="tab-content space-y-4">
                 <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Police Clearance & Fingerprint Certification</h2>
 
@@ -374,7 +493,7 @@
                     <div>
                         <h4 class="font-semibold text-gray-900">Step 5: Final Verification at the Chinese Embassy in Ethiopia</h4>
                         <p class="mt-1 text-sm text-gray-700">
-                            Legalize the document at the Embassy of the People’s Republic of China in Ethiopia. Check their website or contact emails for exact address and requirements.
+                            Legalize the document at the Embassy of the People's Republic of China in Ethiopia. Check their website or contact emails for exact address and requirements.
                         </p>
                         <p class="text-sm text-gray-800">
                             <span class="font-medium">Contacts:</span> chinaemb_et@mfa.gov.cn, chineseembassy@telecom.net.et
@@ -393,6 +512,8 @@
                 </div>
             </div>
 
+
+            <!-- QR Code Section -->
             <div class="flex flex-col items-center p-4 bg-blue-50 border-blue-200 border rounded-xl mt-6">
                 <h3 class="text-lg font-bold text-blue-700 mb-3">Scan for Quick Access</h3>
                 <p class="text-sm text-center text-blue-600 mb-4">
@@ -403,7 +524,8 @@
                     Download
                 </button>
             </div>
-            <!-- 2. Service Satisfaction & Complaints QR Code (Static Image) -->
+
+            <!-- Service Satisfaction & Complaints QR Code -->
             <div class="flex flex-col items-center p-4 bg-green-50 border-green-200 border rounded-xl mt-6 mb-4">
                 <h3 class="text-lg font-bold text-green-700 mb-3">Service Satisfaction and Complaints Form</h3>
                 <p class="text-sm text-center text-green-600 mb-4">Scan this QR code to submit feedback or complaints directly to the Embassy.</p>
@@ -411,10 +533,10 @@
                     <img src="com.jpg" alt="Service Satisfaction and Complaints QR Code" id="complaintQrImage" class="w-32 h-32" onerror="this.src='https://placehold.co/128x128/9CA3AF/FFFFFF?text=Image+Missing'; this.alt='Complaint QR Image Missing';">
                 </div>
                 <button id="downloadComplaintQrButton" onclick="downloadComplaintQRCode()" class="mt-4 px-4 py-2 text-sm font-medium rounded-xl shadow-sm text-white bg-green-600 hover:bg-green-700 transition duration-150 ease-in-out">
-                    Download 
+                    Download
                 </button>
-
             </div>
+
         </main>
 
         <!-- Footer -->
@@ -436,39 +558,28 @@
 
         function downloadQRCode() {
             const qrcodeContainer = document.getElementById('qrcode');
-            // qrcode.js renders the QR code into a canvas element inside the target div.
             const canvas = qrcodeContainer.querySelector('canvas');
-
             if (canvas) {
-                // Get the data URL of the canvas image
                 const imageURL = canvas.toDataURL('image/png');
-
-                // Create a temporary link element to trigger the download
                 const tempLink = document.createElement('a');
                 tempLink.href = imageURL;
-                tempLink.download = 'embassy_notice_board_qr.png'; // Suggested filename
-
-                // Append link to body, click it, and remove it
+                tempLink.download = 'embassy_notice_board_qr.png';
                 document.body.appendChild(tempLink);
                 tempLink.click();
                 document.body.removeChild(tempLink);
             } else {
-                // If canvas isn't found, it might be an older browser using tables (less common)
                 console.error("QR Code canvas element not found. Download failed.");
             }
         }
+
         function downloadComplaintQRCode() {
-            // Since this is a static image, we just need to trigger a download of the file path.
             const tempLink = document.createElement('a');
             tempLink.href = 'com.jpg';
-            tempLink.download = 'com.jpg'; // Suggested filename for clarity
-
-            // Append link to body, click it, and remove it
+            tempLink.download = 'com.jpg';
             document.body.appendChild(tempLink);
             tempLink.click();
             document.body.removeChild(tempLink);
         }
-
 
         function generateQRCode() {
             const siteUrl = window.location.href;
